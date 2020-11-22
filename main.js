@@ -5,10 +5,27 @@ const myApp = new Vue({
       utente: 'img/avatar_io.jpg',
       nome: 'Martina'
     },
-    contatti: ['Marco', 'Fabio', 'Fabrizio', 'Alessandra'],
-  contatto: {
-    nome: 'Marco',
-    avatar: 'img/avatar_1.jpg',
+    contatti: [
+      {
+        nome: 'Marco',
+        avatar: 'img/avatar_1.jpg',
+
+      },
+      {
+        nome: 'Fabio',
+        avatar: 'img/avatar_2.jpg',
+
+      },
+      {
+        nome: 'Fabrizio',
+        avatar: 'img/avatar_3.jpg',
+
+      },
+      {
+        nome: 'Alessandra',
+        avatar: 'img/avatar_6.jpg',
+
+      }
+    ]
   }
-}
 })

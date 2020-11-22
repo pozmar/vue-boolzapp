@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8">
+  <!-- viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- font awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <!-- css -->
@@ -11,72 +12,93 @@
   <title>Boolzapp</title>
 </head>
 <body>
-
-
+  <!-- MAIN -->
   <main id="root" class="box-app">
+    <!-- SECTION LEFT -->
     <section class="left">
+      <!-- TOP-LEFT -->
       <div class="top-left">
         <div class="nav-left">
-          <img src="" alt="">
-          <div class="nav-interactions">
-            <a href="#"><i class="fas fa-circle-notch"></i></a>
-            <a href="#"><i class="fas fa-comment-alt"></i></a>
-            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+          <div class="my-avatar">
+            <a href="#">
+              <img  :src="utentePrincipale.utente" alt=""></a>
+              <p>{{ utentePrincipale.nome }}</p>
+            </div>
+            <div class="nav-interactions">
+              <a href="#"><i class="fas fa-circle-notch"></i></a>
+              <a href="#"><i class="fas fa-comment-alt"></i></a>
+              <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+            </div>
           </div>
-
-        </div>
-        <div class="notifications">
-          <i class="fas fa-bell-slash fa-2x"></i>
-          <div class="text-not">
-            <p><strong> Ricevi notifiche di nuovi messaggi</strong></p>
-            <a href="#" class="activating"><p></p>Attiva notifiche desktop</a>
+          <!-- NOTIFICHE -->
+          <div class="notifications">
+            <i class="fas fa-bell-slash fa-2x"></i>
+            <div class="text-not">
+              <p><strong> Ricevi notifiche di nuovi messaggi</strong></p>
+              <a href="#" class="activating"><p></p>Attiva notifiche desktop</a>
+            </div>
+          </div>
+          <!-- SEARCHING -->
+          <div class="searching">
+            <button type="button" name="button"><i class="fas fa-search"></i></button>
+            <input id="searchInput" type="text" name="" placeholder="Cerca o inizia una nuova chat" value="">
           </div>
         </div>
-        <div class="searching">
+        <!-- BOTTOM-LEFT -->
+        <div class="bottom-left">
+          <ul class="contacts">
+            <li><img :src="contatti[0].avatar" alt="">
+              <p>{{ contatti[0].nome }}</p>
+            </li>
+            <li><img :src="contatti[1].avatar" alt="">
+              <p>{{ contatti[1].nome }}</p>
+            </li>
+            <li><img :src="contatti[2].avatar" alt="">
+              <p>{{ contatti[2].nome }}</p>
+            </li>
+            <li><img :src="contatti[3].avatar" alt="">
+              <p>{{ contatti[3].nome }}</p>
+            </li>
 
-          <button type="button" name="button"><i class="fas fa-search"></i></button>
-          <input id="searchInput" type="text" name="" placeholder="Cerca o inizia una nuova chat" value="">
-
+          </ul>
         </div>
-      </div>
-      <div class="bottom-left">
-        <ul class="contacts">
-          <li></li>
-        </ul>
-      </div>
-    </section>
-    <section class="right">
-      <div class="top-right">
-        <div class="nav-right">
-          <img src="" alt="">
-          <div class="nav-interactions">
-            <a href="#"><i class="fas fa-search"></i></a>
-            <a href="#"><i class="fas fa-paperclip"></i></a>
-            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+      </section>
+      <!-- SECTION RIGHT -->
+      <section class="right">
+        <!-- TOP-RIGHT -->
+        <div class="top-right">
+          <div class="nav-right">
+            <img src="" alt="">
+            <div class="nav-interactions">
+              <a href="#"><i class="fas fa-search"></i></a>
+              <a href="#"><i class="fas fa-paperclip"></i></a>
+              <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+            </div>
           </div>
-
         </div>
-      </div>
+        <!-- MESSAGGI -->
+        <div class="messages">
+          <div class="chat-utente">
+            <p>Come stai?</p>
+          </div>
+          <div class="chat-io">
+            <p>Abbastanza bene, tu?</p>
+          </div>
+        </div>
+        <!-- SENDING -->
+        <div class="sending">
+          <a href="#">
+            <i class="far fa-smile"></i></a>
+            <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+            <a href="#">
+              <i class="fas fa-microphone"></i></a>
+            </div>
+          </section>
+        </main>
 
-      <div class="messages">
 
-      </div>
-      <div class="sending">
-        <i class="far fa-smile"></i>
-        <input type="text" name="" value="" placeholder="Scrivi un messaggio">
-        <i class="fas fa-microphone"></i>
-
-      </div>
-
-    </section>
-
-
-
-  </main>
-
-
-  <!-- </main> -->
-  <!-- script -->
-  <script src="main.js" charset="utf-8"></script>
-</body>
-</html>
+        <!-- </main> -->
+        <!-- script -->
+        <script src="main.js" charset="utf-8"></script>
+      </body>
+      </html>
