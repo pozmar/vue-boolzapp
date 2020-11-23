@@ -133,32 +133,41 @@ body{
   .nav-right{
     height: 70px;
   }
+  .contact-message{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .contact-message p span{
+    display: block;
+    color: grey;
+  }
   /* MESSAGES */
   .messages{
     height: calc(100% - 140px);
     background-image: url("img/mine.jpg");
     overflow-y: auto;
   }
-  .chat-utente, .chat-io{
+  .received, .sent{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
   }
-  .chat-utente{
+  .received{
     justify-content: flex-start;
   }
-  .chat-io{
+  .sent{
     justify-content: flex-end;
   }
-  .chat-utente p, .chat-io p {
+  .received p, .swnt p {
     padding: 20px;
     border: 1px solid black;
     border-radius: 10px;
   }
-  .chat-io p{
+  .sent p{
     background-color: rgb(208, 247, 183);
   }
-  .chat-utente p{
+  .received p{
     background-color: white;
   }
   /* SENDING */

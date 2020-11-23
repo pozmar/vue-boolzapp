@@ -47,25 +47,9 @@
 
         <!-- CONTATTI -->
         <ul class="contacts">
-          <li  v-for="contatto in contatti"><img :src="contatto.avatar" alt="">
+          <li  v-for="(contatto, i) in contatti" @click="changeIndexContatto(i)"><img :src="contatto.avatar" alt="">
             <p>{{ contatto.nome }}</p>
           </li>
-          <!-- <li><img :src="contatti[1].avatar" alt="">
-            <p>{{ contatti[1].nome }}</p>
-          </li>
-          <li><img :src="contatti[2].avatar" alt="">
-            <p>{{ contatti[2].nome }}</p>
-          </li>
-          <li><img :src="contatti[3].avatar" alt="">
-            <p>{{ contatti[3].nome }}</p>
-          </li>
-          <li><img :src="contatti[4].avatar" alt="">
-            <p>{{ contatti[4].nome }}</p>
-          </li>
-          <li><img :src="contatti[5].avatar" alt="">
-            <p>{{ contatti[5].nome }}</p>
-          </li> -->
-
         </ul>
 
       </section>
@@ -73,22 +57,26 @@
       <section class="right">
         <!-- TOP-RIGHT -->
 
-          <div class="nav-right">
-            <img src="" alt="">
-            <div class="nav-interactions">
-              <a href="#"><i class="fas fa-search"></i></a>
-              <a href="#"><i class="fas fa-paperclip"></i></a>
-              <a href="#"><i class="fas fa-ellipsis-v"></i></a>
-            </div>
+        <div class="nav-right">
+          <div class="contact-message">
+            <img :src="contatti[openContactIndex].avatar" alt="">
+            <p>{{ contatti[openContactIndex].nome}} <span>Ultimo accesso alle {{contatti[openContactIndex].ultimoAccesso}}</span>
+            </p>
           </div>
+          <div class="nav-interactions">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#"><i class="fas fa-paperclip"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+          </div>
+        </div>
 
         <!-- MESSAGGI -->
         <div class="messages">
-          <div class="chat-utente">
-            <p>Come stai?</p>
+          <div class="received">
+            <p>{{el}}</p>
           </div>
-          <div class="chat-io">
-            <p>Abbastanza bene, tu?</p>
+          <div class="sent">
+            <p>{{el}}</p>
           </div>
         </div>
         <!-- SENDING -->
