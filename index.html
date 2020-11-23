@@ -38,35 +38,41 @@
               <a href="#" class="activating"><p></p>Attiva notifiche desktop</a>
             </div>
           </div>
-          <!-- SEARCHING -->
-          <div class="searching">
-            <button type="button" name="button"><i class="fas fa-search"></i></button>
-            <input id="searchInput" type="text" name="" placeholder="Cerca o inizia una nuova chat" value="">
-          </div>
         </div>
-        <!-- BOTTOM-LEFT -->
-        <div class="bottom-left">
-          <ul class="contacts">
-            <li><img :src="contatti[0].avatar" alt="">
-              <p>{{ contatti[0].nome }}</p>
-            </li>
-            <li><img :src="contatti[1].avatar" alt="">
-              <p>{{ contatti[1].nome }}</p>
-            </li>
-            <li><img :src="contatti[2].avatar" alt="">
-              <p>{{ contatti[2].nome }}</p>
-            </li>
-            <li><img :src="contatti[3].avatar" alt="">
-              <p>{{ contatti[3].nome }}</p>
-            </li>
+        <!-- SEARCHING -->
+        <div class="searching">
+          <button type="button" name="button"><i class="fas fa-search"></i></button>
+          <input id="searchInput" type="text" name="" placeholder="Cerca o inizia una nuova chat" value="">
+        </div>
 
-          </ul>
-        </div>
+        <!-- CONTATTI -->
+        <ul class="contacts">
+          <li><img :src="contatti[0].avatar" alt="">
+            <p>{{ contatti[0].nome }}</p>
+          </li>
+          <li><img :src="contatti[1].avatar" alt="">
+            <p>{{ contatti[1].nome }}</p>
+          </li>
+          <li><img :src="contatti[2].avatar" alt="">
+            <p>{{ contatti[2].nome }}</p>
+          </li>
+          <li><img :src="contatti[3].avatar" alt="">
+            <p>{{ contatti[3].nome }}</p>
+          </li>
+          <li><img :src="contatti[4].avatar" alt="">
+            <p>{{ contatti[4].nome }}</p>
+          </li>
+          <li><img :src="contatti[5].avatar" alt="">
+            <p>{{ contatti[5].nome }}</p>
+          </li>
+
+        </ul>
+
       </section>
       <!-- SECTION RIGHT -->
       <section class="right">
         <!-- TOP-RIGHT -->
-        <div class="top-right">
+
           <div class="nav-right">
             <img src="" alt="">
             <div class="nav-interactions">
@@ -75,7 +81,7 @@
               <a href="#"><i class="fas fa-ellipsis-v"></i></a>
             </div>
           </div>
-        </div>
+      
         <!-- MESSAGGI -->
         <div class="messages">
           <div class="chat-utente">

@@ -19,12 +19,18 @@ const myApp = new Vue({
       {
         nome: 'Fabrizio',
         avatar: 'img/avatar_3.jpg',
-
       },
       {
         nome: 'Alessandra',
         avatar: 'img/avatar_6.jpg',
-
+      },
+      {
+        nome: 'Enrico',
+        avatar: 'img/avatar_7.jpg',
+      },
+      {
+        nome: 'Giacomo',
+        avatar: 'img/avatar_8.jpg',
       }
     ]
   }
