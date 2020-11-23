@@ -67,7 +67,8 @@ body{
     color: #7ed1ed;
   }
   .notifications:hover{
-    background-color: blue;
+    background-color: lightblue;
+    cursor: pointer;
   }
   .activating{
     font-size: 10px;
@@ -105,7 +106,7 @@ body{
   .contacts{
     height: calc(100% - 180px);
     list-style: none;
-    overflow-y: auto;
+    overflow-y: scroll;
   }
   .contacts li{
     display: flex;
@@ -113,6 +114,10 @@ body{
     align-items: center;
     border-bottom: 1px solid lightgrey;
     padding: 10px 5px;
+   }
+   .contacts li:hover{
+     background-color:  #f0f0f0;
+     cursor: pointer;
    }
   .contacts li > p{
     align-self: flex-start;
@@ -162,7 +167,7 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #faf0e3;
+    background-color: #f0f0f0;
   }
   .sending input{
     width: 80%;

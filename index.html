@@ -47,10 +47,10 @@
 
         <!-- CONTATTI -->
         <ul class="contacts">
-          <li><img :src="contatti[0].avatar" alt="">
-            <p>{{ contatti[0].nome }}</p>
+          <li  v-for="contatto in contatti"><img :src="contatto.avatar" alt="">
+            <p>{{ contatto.nome }}</p>
           </li>
-          <li><img :src="contatti[1].avatar" alt="">
+          <!-- <li><img :src="contatti[1].avatar" alt="">
             <p>{{ contatti[1].nome }}</p>
           </li>
           <li><img :src="contatti[2].avatar" alt="">
@@ -64,7 +64,7 @@
           </li>
           <li><img :src="contatti[5].avatar" alt="">
             <p>{{ contatti[5].nome }}</p>
-          </li>
+          </li> -->
 
         </ul>
 
@@ -81,7 +81,7 @@
               <a href="#"><i class="fas fa-ellipsis-v"></i></a>
             </div>
           </div>
-      
+
         <!-- MESSAGGI -->
         <div class="messages">
           <div class="chat-utente">
@@ -95,7 +95,9 @@
         <div class="sending">
           <a href="#">
             <i class="far fa-smile"></i></a>
-            <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+            <input type="text" name="" value="" placeholder="Scrivi un messaggio"
+            v-model="input"
+            v-on:keyup.enter="takeInput()">
             <a href="#">
               <i class="fas fa-microphone"></i></a>
             </div>
