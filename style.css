@@ -159,7 +159,7 @@ body{
   .sent{
     justify-content: flex-end;
   }
-  .received p, .swnt p {
+  .received p, .sent p {
     padding: 20px;
     border: 1px solid black;
     border-radius: 10px;

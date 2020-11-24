@@ -72,12 +72,10 @@
 
         <!-- MESSAGGI -->
         <div class="messages">
-          <div class="received">
-            <p>{{el}}</p>
+          <div v-for="m in contatti[openContactIndex].messaggi" :class="m.type">
+            <p>{{ m.text }}</p>
           </div>
-          <div class="sent">
-            <p>{{el}}</p>
-          </div>
+      
         </div>
         <!-- SENDING -->
         <div class="sending">
