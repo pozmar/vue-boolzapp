@@ -185,12 +185,12 @@ const myApp = new Vue({
       }
     ],
     openContactIndex: 0,
-
     input: {
       text: '',
       type: 'sent',
       orario: date,
     },
+    search: '',
   },
   methods:{
     submit: function(index){
@@ -209,6 +209,13 @@ const myApp = new Vue({
         text:randomMessages[randomIndex],
         type: 'received',
         orario: date
+      })
+    },
+  },
+  computed: {
+    filteredContatti: function () {
+      return this.contatti.filter(contatto => {
+        return contatto.nome.toLowerCase().includes(this.search.toLowerCase())
       })
     }
   }

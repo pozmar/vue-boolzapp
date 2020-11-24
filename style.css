@@ -85,7 +85,7 @@ body{
     justify-content: center;
     align-items: center;
   }
-  #searchInput{
+  .searchInput{
     width: 80%;
     height: 80%;
     border: none;
@@ -97,7 +97,7 @@ body{
     border: none;
     background-color: white;
   }
-  .searching button, #searchInput{
+  .searching button, .searchInput{
     margin-top: 2.5px;
     margin-bottom: 2.5px;
   }

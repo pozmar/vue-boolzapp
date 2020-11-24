@@ -42,12 +42,12 @@
         <!-- SEARCHING -->
         <div class="searching">
           <button type="button" name="button"><i class="fas fa-search"></i></button>
-          <input id="searchInput" type="text" name="" placeholder="Cerca o inizia una nuova chat" value="">
+          <input class="searchInput" type="text" name="" placeholder="Cerca o inizia una nuova chat" v-model="search">
         </div>
 
         <!-- CONTATTI -->
         <ul class="contacts">
-          <li  v-for="(contatto, i) in contatti" @click="changeIndexContatto(i)"><img :src="contatto.avatar" alt="" :class="{selected: i === changeIndexContatto}">
+          <li  v-for="(contatto, i) in filteredContatti" @click="changeIndexContatto(i)"><img :src="contatto.avatar" alt="" :class="{selected: i === changeIndexContatto}">
             <p>{{ contatto.nome }}</p>
           </li>
         </ul>
