@@ -194,9 +194,14 @@ const myApp = new Vue({
     },
   },
   methods:{
-    submit: function(){
-      this.contatti[this.openContactIndex].messaggi.push(this.input);
+    submit: function(index){
+      let newMessage = {...this.input}
+      this.contatti[this.openContactIndex].messaggi.push(newMessage);
+      this.clearInput();
     },
+    clearInput: function(){
+     this.input.text = "";
+   },
     changeIndexContatto: function(index){
       this.openContactIndex = index;
     }

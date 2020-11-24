@@ -77,9 +77,9 @@
               <span>{{ m.orario }}</span>
             </p>
           </div>
-          <div class="sent" v-for="(m) in contatti[openContactIndex].messaggi.input">
-            <p>{{ m.text }}
-              <span>{{ m.orario }}</span>
+          <div class="sent" v-for="el in contatti[openContactIndex].messaggi.input">
+            <p>{{ text }}
+              <span>{{ orario }}</span>
             </p>
           </div>
 
@@ -90,7 +90,7 @@
             <i class="far fa-smile"></i></a>
             <input type="text" name="" value="" placeholder="Scrivi un messaggio"
             v-model="input.text"
-            v-on:keyup.enter="submit()">
+            v-on:keyup.enter="submit(openContactIndex)">
             <a href="#">
               <i class="fas fa-microphone"></i></a>
             </div>
