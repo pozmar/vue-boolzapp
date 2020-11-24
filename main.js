@@ -1,7 +1,7 @@
 //data di accesso
 const dateOptions = {'weekday': 'long', 'month': 'short', 'day': '2-digit'};
 const timeOptions = {'hour': '2-digit', 'minute': '2-digit'};
-var date =  new Date().toLocaleString('it-IT', dateOptions) + " alle ore " + new Date().toLocaleTimeString('it-IT', timeOptions );
+var date =  new Date().toLocaleString('it-IT', dateOptions) + " alle ore " + new Date().toLocaleTimeString('it-IT', timeOptions);
 const myApp = new Vue({
   el: "#root",
   data: {
@@ -197,7 +197,9 @@ const myApp = new Vue({
       let newMessage = {...this.input}
       this.contatti[this.openContactIndex].messaggi.push(newMessage);
       this.input.text = "";
+      setTimeout(this.scroll, 20);
       setTimeout(this.replyMessage, 3000);
+      
     },
     changeIndexContatto: function(index){
       this.openContactIndex = index;
@@ -211,6 +213,10 @@ const myApp = new Vue({
         orario: date
       })
     },
+    scroll: function(){
+      let chat = this.$el.querySelector(".messages");
+      chat.scrollTop = chat.scrollHeight;
+    }
   },
   computed: {
     filteredContatti: function () {
