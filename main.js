@@ -199,7 +199,6 @@ const myApp = new Vue({
       this.input.text = "";
       setTimeout(this.scroll, 20);
       setTimeout(this.replyMessage, 3000);
-      
     },
     changeIndexContatto: function(index){
       this.openContactIndex = index;

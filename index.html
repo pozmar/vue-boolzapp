@@ -3,6 +3,8 @@
 <head>
   <!-- viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <!-- font awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <!-- css -->
@@ -47,7 +49,7 @@
 
         <!-- CONTATTI -->
         <ul class="contacts">
-          <li  v-for="(contatto, i) in filteredContatti" @click="changeIndexContatto(i)"><img :src="contatto.avatar" alt="" :class="{selected: i === changeIndexContatto}">
+          <li  v-for="(contatto, i) in filteredContatti" @click="changeIndexContatto(i)"><img :src="contatto.avatar" alt="" :class="{selected: i === openContactIndex}">
             <p>{{ contatto.nome }}</p>
           </li>
         </ul>
