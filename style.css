@@ -148,6 +148,14 @@ body{
     background-image: url("img/mine.jpg");
     overflow-y: auto;
   }
+  .messages p span{
+    display: block;
+    color: grey;
+    font-size: 10px;
+    padding-top: 10px;
+    text-align: right;
+
+  }
   .received, .sent{
     width: 100%;
     display: flex;
@@ -163,6 +171,7 @@ body{
     padding: 20px;
     border: 1px solid black;
     border-radius: 10px;
+    margin: 5px;
   }
   .sent p{
     background-color: rgb(208, 247, 183);

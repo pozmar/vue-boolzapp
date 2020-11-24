@@ -60,7 +60,7 @@
         <div class="nav-right">
           <div class="contact-message">
             <img :src="contatti[openContactIndex].avatar" alt="">
-            <p>{{ contatti[openContactIndex].nome}} <span>Ultimo accesso alle {{contatti[openContactIndex].ultimoAccesso}}</span>
+            <p>{{ contatti[openContactIndex].nome}} <span> Ultimo accesso:  {{contatti[openContactIndex].ultimoAccesso}}</span>
             </p>
           </div>
           <div class="nav-interactions">
@@ -73,9 +73,12 @@
         <!-- MESSAGGI -->
         <div class="messages">
           <div v-for="m in contatti[openContactIndex].messaggi" :class="m.type">
-            <p>{{ m.text }}</p>
+            <p>{{ m.text }}
+              <span>{{ m.orario }}</span>
+            </p>
+
           </div>
-      
+
         </div>
         <!-- SENDING -->
         <div class="sending">
