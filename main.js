@@ -82,22 +82,22 @@ const myApp = new Vue({
             orario: date,
           },
           {
-            text:'Disastro',
+            text:'Benissimo, ambiente fantastico',
             type: 'sent',
             orario: date,
           },
           {
-            text: 'Come mai?',
+            text: 'Dai, che bello!',
             type: 'received',
             orario: date,
           },
           {
-            text: 'Capi pazzi, per fortuna i colleghi sono sani di mente',
+            text: 'Sì, mi trovo benissimo con tutti. Caffè a gratis',
             type: 'sent',
             orario: date,
           },
           {
-            text: 'Vi fate compagnia almeno',
+            text: 'Si vola',
             type: 'received',
             orario: date,
           },
@@ -186,13 +186,16 @@ const myApp = new Vue({
       }
     ],
     openContactIndex: 0,
-    listInput: [],
-    input: '',
+
+    input: {
+      text: '',
+      type: 'sent',
+      orario: date,
+    },
   },
   methods:{
-    takeInput: function(){
-      this.listInput.push(this.input);
-      this.input = '';
+    submit: function(){
+      this.contatti[this.openContactIndex].messaggi.push(this.input);
     },
     changeIndexContatto: function(index){
       this.openContactIndex = index;

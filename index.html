@@ -47,7 +47,7 @@
 
         <!-- CONTATTI -->
         <ul class="contacts">
-          <li  v-for="(contatto, i) in contatti" @click="changeIndexContatto(i)"><img :src="contatto.avatar" alt="">
+          <li  v-for="(contatto, i) in contatti" @click="changeIndexContatto(i)"><img :src="contatto.avatar" alt="" :class="{selected: i === changeIndexContatto}">
             <p>{{ contatto.nome }}</p>
           </li>
         </ul>
@@ -76,7 +76,11 @@
             <p>{{ m.text }}
               <span>{{ m.orario }}</span>
             </p>
-
+          </div>
+          <div class="sent" v-for="(m) in contatti[openContactIndex].messaggi.input">
+            <p>{{ m.text }}
+              <span>{{ m.orario }}</span>
+            </p>
           </div>
 
         </div>
@@ -85,8 +89,8 @@
           <a href="#">
             <i class="far fa-smile"></i></a>
             <input type="text" name="" value="" placeholder="Scrivi un messaggio"
-            v-model="input"
-            v-on:keyup.enter="takeInput()">
+            v-model="input.text"
+            v-on:keyup.enter="submit()">
             <a href="#">
               <i class="fas fa-microphone"></i></a>
             </div>
