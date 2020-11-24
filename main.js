@@ -2,7 +2,6 @@
 const dateOptions = {'weekday': 'long', 'month': 'short', 'day': '2-digit'};
 const timeOptions = {'hour': '2-digit', 'minute': '2-digit'};
 var date =  new Date().toLocaleString('it-IT', dateOptions) + " alle ore " + new Date().toLocaleTimeString('it-IT', timeOptions );
-
 const myApp = new Vue({
   el: "#root",
   data: {
@@ -197,14 +196,20 @@ const myApp = new Vue({
     submit: function(index){
       let newMessage = {...this.input}
       this.contatti[this.openContactIndex].messaggi.push(newMessage);
-      this.clearInput();
+      this.input.text = "";
+      setTimeout(this.replyMessage, 3000);
     },
-    clearInput: function(){
-     this.input.text = "";
-   },
     changeIndexContatto: function(index){
       this.openContactIndex = index;
+    },
+    replyMessage: function(index){
+      const randomMessages = ['Ok', 'Non ho capito', 'Spiegati', 'Come vuoi', 'Top'];
+      const randomIndex = Math.floor(Math.random() * 5);
+      this.contatti[this.openContactIndex].messaggi.push({
+        text:randomMessages[randomIndex],
+        type: 'received',
+        orario: date
+      })
     }
-
   }
 })
