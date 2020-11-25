@@ -197,14 +197,21 @@ const myApp = new Vue({
     emoji,
   },
   methods:{
+    emojiPanel: function() {
+      this.isActive = !this.isActive;
+    },
+    sendEmoji: function(index){
+      this.input.text += this.emoji[index];
+    },
     submit: function(index){
       if(this.input.text != ""){
-      let newMessage = {...this.input}
-      this.contatti[this.openContactIndex].messaggi.push(newMessage);
-      this.input.text = "";
-      setTimeout(this.scroll, 20);
-      setTimeout(this.replyMessage, 3000);
-    }
+        let newMessage = {...this.input}
+        this.contatti[this.openContactIndex].messaggi.push(newMessage);
+        this.input.text = "";
+        setTimeout(this.scroll, 20);
+        setTimeout(this.replyMessage, 3000);
+        this.emojiPanel();
+      }
     },
     changeIndexContatto: function(index){
       this.openContactIndex = index;
@@ -223,12 +230,7 @@ const myApp = new Vue({
       let chat = this.$el.querySelector(".messages");
       chat.scrollTop = chat.scrollHeight;
     },
-    emojiPanel: function() {
-      this.isActive = !this.isActive;
-    },
-    sendEmoji: function(index){
-      this.input.text += this.emoji[index];
-    }
+
   },
   computed: {
     filteredContatti: function () {

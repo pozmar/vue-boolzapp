@@ -205,6 +205,9 @@ body{
     display: inline-block;
     width: 40px;
   }
+  .emoticon ul li:hover{
+    cursor: pointer;
+  }
   .active{
     display: block;
   }
