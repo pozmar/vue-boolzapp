@@ -115,11 +115,11 @@ body{
     align-items: center;
     border-bottom: 1px solid lightgrey;
     padding: 10px 5px;
-   }
-   .contacts li:hover{
-     background-color:  #f0f0f0;
-     cursor: pointer;
-   }
+  }
+  .contacts li:hover{
+    background-color:  #f0f0f0;
+    cursor: pointer;
+  }
   .contacts li > p{
     align-self: flex-start;
     margin-left: 10px;
@@ -188,12 +188,28 @@ body{
     align-items: center;
     background-color: #f0f0f0;
   }
+  .sending i {
+    margin-left: 10px;
+  }
   .sending input{
     width: 80%;
     height: 80%;
     border-radius: 10px;
     border-style: none;
     padding-left: 10px;
+  }
+  .emoticon{
+    height: auto;
+    display: hidden;
+    overflow-y: auto;
+    background-color: #f0f0f0;
+  }
+  .emoticon ul li{
+    display: inline-block;
+    width: 40px;
+  }
+  .active{
+    display: block;
   }
   /* GENERAL */
   a:hover{
