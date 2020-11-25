@@ -79,9 +79,9 @@
               <span>{{ m.orario }}</span>
             </p>
           </div>
-          <div class="emoticon" v-if="isActive === true" >
+          <div class="emoticon" v-if="isActive === true">
             <ul>
-              <li v-for="(el, index) in emoji" @click="sendEmoji(index)">{{ el }}</li>
+              <li v-for="(el, index) in emoji" @click="sendEmoji(index)" v-on:keyup.enter="submit(openContactIndex)">{{ el }}</li>
             </ul>
 
           </div>

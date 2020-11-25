@@ -198,11 +198,13 @@ const myApp = new Vue({
   },
   methods:{
     submit: function(index){
+      if(this.input.text != ""){
       let newMessage = {...this.input}
       this.contatti[this.openContactIndex].messaggi.push(newMessage);
       this.input.text = "";
       setTimeout(this.scroll, 20);
       setTimeout(this.replyMessage, 3000);
+    }
     },
     changeIndexContatto: function(index){
       this.openContactIndex = index;
@@ -215,6 +217,7 @@ const myApp = new Vue({
         type: 'received',
         orario: date
       })
+
     },
     scroll: function(){
       let chat = this.$el.querySelector(".messages");
