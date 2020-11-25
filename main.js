@@ -223,6 +223,9 @@ const myApp = new Vue({
     emojiPanel: function() {
       this.isActive = !this.isActive;
     },
+    sendEmoji: function(index){
+      this.input.text += this.emoji[index];
+    }
   },
   computed: {
     filteredContatti: function () {

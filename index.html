@@ -74,14 +74,14 @@
 
         <!-- MESSAGGI -->
         <div class="messages">
-          <div v-for="m in contatti[openContactIndex].messaggi" :class="m.type">
+          <div v-for="m in contatti[openContactIndex].messaggi"  :class="m.type">
             <p>{{ m.text }}
               <span>{{ m.orario }}</span>
             </p>
           </div>
           <div class="emoticon" v-if="isActive === true" >
             <ul>
-              <li  v-for="el in emoji">{{ el }}</li>
+              <li v-for="(el, index) in emoji" @click="sendEmoji(index)">{{ el }}</li>
             </ul>
 
           </div>
@@ -90,8 +90,12 @@
         <!-- SENDING -->
         <div class="sending">
           <a href="#">
-            <i class="fas fa-times" v-if="isActive === true" v-on:click=" emojiPanel"></i>
-            <i class="far fa-smile" v-on:click=" emojiPanel"></i></a>
+            <i class="fas fa-times"
+            v-if="isActive === true"
+            v-on:click=" emojiPanel"></i></a>
+            <a href="#">
+            <i class="far fa-smile"
+            v-on:click=" emojiPanel"></i></a>
             <input type="text" name="" value="" placeholder="Scrivi un messaggio"
             v-model="input.text"
             v-on:keyup.enter="submit(openContactIndex)">
