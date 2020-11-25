@@ -76,7 +76,7 @@
         <div class="messages">
           <div v-for="m in contatti[openContactIndex].messaggi"  :class="m.type">
             <p>{{ m.text }}
-              <span>{{ m.orario }}</span>
+            <i class="fas fa-chevron-down"></i>  <span>{{ m.orario }}</span>
             </p>
           </div>
           <div class="emoticon" v-if="isActive === true">
