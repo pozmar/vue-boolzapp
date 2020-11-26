@@ -8,6 +8,8 @@ const myApp = new Vue({
     },
     contatti,
     openContactIndex: 0,
+    activeContact: null,
+    filteredContacts: [],
     input: {
       text: '',
       type: 'sent',
@@ -18,7 +20,17 @@ const myApp = new Vue({
     emoji,
     // isListActive : false,
   },
+  beforeCreate(){
+  },
+  created(){
+    this.activeContact = this.contatti[0];
+  },
+  mounted(){
+  },
   methods:{
+    activateContact: function(contatto){
+      this.activeContact = contatto;
+    },
     // pannello emoji
     emojiPanel: function() {
       this.isActive = !this.isActive;
@@ -31,7 +43,7 @@ const myApp = new Vue({
     submit: function(index){
       if(this.input.text != ""){
         let newMessage = {...this.input}
-        this.contatti[this.openContactIndex].messaggi.push(newMessage);
+        this.activeContact.messaggi.push(newMessage);
         this.input.text = "";
         //si scrolla al messaggio appena inviato
         setTimeout(this.scroll, 20);
@@ -43,15 +55,11 @@ const myApp = new Vue({
         this.emojiPanel();
       }
     },
-    //creo funzione per trovare la posizione del contatto
-    changeIndexContatto: function(index){
-      this.openContactIndex = index;
-    },
     //creazione risposte randomiche
     replyMessage: function(index){
       const randomMessages = ['Ok', 'Non ho capito', 'Spiegati', 'Come vuoi', 'Top'];
       const randomIndex = Math.floor(Math.random() * 5);
-      this.contatti[this.openContactIndex].messaggi.push({
+      this.activeContact.messaggi.push({
         text:randomMessages[randomIndex],
         type: 'received',
         orario: date
@@ -65,7 +73,7 @@ const myApp = new Vue({
 },
 //contatti filtrati per la search bar
 computed: {
-  filteredContatti: function () {
+  filterContatti: function () {
     return this.contatti.filter(contatto => {
       return contatto.nome.toLowerCase().includes(this.search.toLowerCase())
     })

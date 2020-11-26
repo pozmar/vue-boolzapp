@@ -51,7 +51,7 @@
 
         <!-- CONTATTI -->
         <ul class="contacts">
-          <li class="amico" v-for="(contatto, i) in filteredContatti" @click="changeIndexContatto(i)"><img :src="contatto.avatar" alt="" :class="{selected: i === openContactIndex}">
+          <li class="amico" v-for="contatto in filterContatti" @click="activateContact(contatto)"><img :src="contatto.avatar" alt="" :class="{selected: contatto === activeContact}">
             <p>{{ contatto.nome }}
             <span>{{ contatto.messaggi[contatto.messaggi.length-1].text}}</span> </p>
           </li>
@@ -64,8 +64,8 @@
 
         <div class="nav-right">
           <div class="contact-message">
-            <img :src="contatti[openContactIndex].avatar" alt="">
-            <p>{{ contatti[openContactIndex].nome}} <span> Ultimo accesso:  {{contatti[openContactIndex].ultimoAccesso}}</span>
+            <img :src="activeContact.avatar" alt="">
+            <p>{{ activeContact.nome}} <span> Ultimo accesso:  {{activeContact.ultimoAccesso}}</span>
             </p>
           </div>
           <div class="nav-interactions">
@@ -78,7 +78,7 @@
         <!-- MESSAGGI -->
         <div class="messages">
 
-          <div class="myMess" v-for="m in contatti[openContactIndex].messaggi"  :class="m.type">
+          <div class="myMess" v-for="m in activeContact.messaggi"  :class="m.type">
             <div class="text"></div>
             <p>{{ m.text }}
               <i class="fas fa-chevron-down"></i>
