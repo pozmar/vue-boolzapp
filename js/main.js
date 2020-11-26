@@ -7,7 +7,6 @@ const myApp = new Vue({
       nome: 'Martina'
     },
     contatti,
-    openContactIndex: 0,
     activeContact: null,
     filteredContacts: [],
     input: {
