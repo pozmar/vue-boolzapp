@@ -195,6 +195,7 @@ const myApp = new Vue({
     search: '',
     isActive : false,
     emoji,
+    // isListActive : false,
   },
   methods:{
     emojiPanel: function() {
@@ -210,6 +211,8 @@ const myApp = new Vue({
         this.input.text = "";
         setTimeout(this.scroll, 20);
         setTimeout(this.replyMessage, 3000);
+      }
+      if(this.isActive === true){
         this.emojiPanel();
       }
     },
@@ -224,19 +227,20 @@ const myApp = new Vue({
         type: 'received',
         orario: date
       })
-
     },
-    scroll: function(){
-      let chat = this.$el.querySelector(".messages");
-      chat.scrollTop = chat.scrollHeight;
-    },
-
+    // actionsPanel: function(){
+    //   this.isListActive = !this.isListActive;
+    // }
   },
-  computed: {
-    filteredContatti: function () {
-      return this.contatti.filter(contatto => {
-        return contatto.nome.toLowerCase().includes(this.search.toLowerCase())
-      })
-    }
+  scroll: function(){
+    let chat = this.$el.querySelector(".messages");
+    chat.scrollTop = chat.scrollHeight;
+  },
+computed: {
+  filteredContatti: function () {
+    return this.contatti.filter(contatto => {
+      return contatto.nome.toLowerCase().includes(this.search.toLowerCase())
+    })
+  },
   }
 })

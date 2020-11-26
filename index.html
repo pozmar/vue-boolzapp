@@ -50,7 +50,8 @@
         <!-- CONTATTI -->
         <ul class="contacts">
           <li class="amico" v-for="(contatto, i) in filteredContatti" @click="changeIndexContatto(i)"><img :src="contatto.avatar" alt="" :class="{selected: i === openContactIndex}">
-            <p>{{ contatto.nome }}</p>
+            <p>{{ contatto.nome }}
+            <span>{{ contatto.messaggi[contatto.messaggi.length-1].text}}</span> </p>
           </li>
         </ul>
 
@@ -76,8 +77,16 @@
         <div class="messages">
           <div v-for="m in contatti[openContactIndex].messaggi"  :class="m.type">
             <p>{{ m.text }}
-            <i class="fas fa-chevron-down"></i>  <span>{{ m.orario }}</span>
+              <i class="fas fa-chevron-down"></i>
+              <span>{{ m.orario }}
+              </span>
             </p>
+                <!-- <ul class="actions"
+                v-if="isListActive === true">
+              <li>Info messaggio</li>
+              <li>Salva</li>
+              <li>Calcella messaggio</li>
+            </ul> -->
           </div>
           <div class="emoticon" v-if="isActive === true">
             <ul>
@@ -94,20 +103,20 @@
             v-if="isActive === true"
             v-on:click=" emojiPanel"></i></a>
             <a href="#">
-            <i class="far fa-smile"
-            v-on:click=" emojiPanel"></i></a>
-            <input type="text" name="" value="" placeholder="Scrivi un messaggio"
-            v-model="input.text"
-            v-on:keyup.enter="submit(openContactIndex)">
-            <a href="#">
-              <i class="fas fa-microphone"></i></a>
-            </div>
-          </section>
-        </main>
+              <i class="far fa-smile"
+              v-on:click=" emojiPanel"></i></a>
+              <input type="text" name="" value="" placeholder="Scrivi un messaggio"
+              v-model="input.text"
+              v-on:keyup.enter="submit(openContactIndex)">
+              <a href="#">
+                <i class="fas fa-microphone"></i></a>
+              </div>
+            </section>
+          </main>
 
 
-        <!-- </main> -->
-        <!-- script -->
-        <script src="main.js" charset="utf-8"></script>
-      </body>
-      </html>
+          <!-- </main> -->
+          <!-- script -->
+          <script src="main.js" charset="utf-8"></script>
+        </body>
+        </html>

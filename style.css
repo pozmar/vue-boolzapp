@@ -143,11 +143,18 @@ body{
     display: block;
     color: grey;
   }
+  .amico p span{
+    display: block;
+    color: grey;
+    font-size: 10px;
+    padding-top: 10px;
+  }
   /* MESSAGES */
   .messages{
     height: calc(100% - 140px);
     background-image: url("img/mine.jpg");
     overflow-y: auto;
+    position: relative;
   }
   .messages p span{
     display: block;
@@ -206,6 +213,10 @@ body{
     display: hidden;
     overflow-y: auto;
     background-color: #f0f0f0;
+    padding-top: 20px;
+  }
+  .emoticon ul{
+    text-align: center;
   }
   .emoticon ul li{
     display: inline-block;
@@ -217,6 +228,13 @@ body{
   .active{
     display: block;
   }
+  .actions{
+    display: block;
+    border: 1px solid black;
+    list-style: none;
+
+  }
+
   /* GENERAL */
   a:hover{
     cursor: pointer;
