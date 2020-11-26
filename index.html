@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="style.css">
   <!-- vue -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <!-- data script -->
+  <script src="js/data.js" charset="utf-8"></script>
   <title>Boolzapp</title>
 </head>
 <body>
@@ -75,12 +77,15 @@
 
         <!-- MESSAGGI -->
         <div class="messages">
-          <div v-for="m in contatti[openContactIndex].messaggi"  :class="m.type">
+
+          <div class="myMess" v-for="m in contatti[openContactIndex].messaggi"  :class="m.type">
+            <div class="text"></div>
             <p>{{ m.text }}
               <i class="fas fa-chevron-down"></i>
               <span>{{ m.orario }}
               </span>
             </p>
+
                 <!-- <ul class="actions"
                 v-if="isListActive === true">
               <li>Info messaggio</li>
@@ -113,10 +118,7 @@
               </div>
             </section>
           </main>
-
-
-          <!-- </main> -->
-          <!-- script -->
-          <script src="main.js" charset="utf-8"></script>
+          <!-- main script -->
+          <script src="js/main.js" charset="utf-8"></script>
         </body>
         </html>
